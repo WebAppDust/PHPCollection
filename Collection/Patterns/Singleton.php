@@ -6,7 +6,7 @@ namespace Collection\Patterns;
 
 
 class Singleton implements \h\Interfaces\Singleton{ //loader
-    protected static $instance; //or private with self
+    protected static /*const*/$instance; //or private with self
     
     
     protected static function getInstance() {
