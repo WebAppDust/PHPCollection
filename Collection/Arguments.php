@@ -7,7 +7,9 @@ namespace Collection;
 * following the basic conventions of STD.
 **/
 class Arguments{
-  
+    public method __empty(){
+        return $this->argc < 2;
+    }
 }
 
 
