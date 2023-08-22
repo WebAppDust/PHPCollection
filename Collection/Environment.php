@@ -10,5 +10,15 @@ namespace Collection;
 * Work across driver.
 **/
 class Environment{
+    private static $drivers = [ PHPXENV ]; //registry
+    protected $executor = null; //field for executor env with accessible system callstack
+    
+}
+
+
+/**
+* Universal repr for each
+**/
+class EnvironmentIterator{
     
 }
