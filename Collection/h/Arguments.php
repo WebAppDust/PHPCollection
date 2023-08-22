@@ -27,4 +27,26 @@ abstract class Arguments implements Interfaces\Arguments{
             default: return $this->{$name};break;
         }
     }
+
+
+    public function __valid(){
+        if( is_integer( $this->argc ) 
+            &&$this->argc > 0
+            &&is_array( $this->argv )
+            &&$this->argc == count( $this->argv ) )
+        {
+            for(/*var*/ $i = 0; $i < $this->argc; $i++){
+                if( !key_exist( $i, $this->argv )
+                      or !is_string( $this->argv[ $i ] ) )
+                {
+                    return false;
+                }else{
+                    continue;
+                }
+            }
+        }else{
+            return false;
+        }
+        return true;
+    }
 }
