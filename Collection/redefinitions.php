@@ -1,5 +1,5 @@
 <?php
 
 
-define( 'DS', DIRECTORY_SEPARATOR );
+define( '_DS', DIRECTORY_SEPARATOR );
 
