@@ -35,7 +35,8 @@ abstract class Arguments implements Interfaces\Arguments{
             &&is_array( $this->argv )
             &&$this->argc == count( $this->argv ) )
         {
-            for(/*var*/ $i = 0; $i < $this->argc; $i++){
+            for (/*var*/ $i = 0; $i < $this->argc; $i++)
+            {
                 if( !key_exist( $i, $this->argv )
                       or !is_string( $this->argv[ $i ] ) )
                 {
