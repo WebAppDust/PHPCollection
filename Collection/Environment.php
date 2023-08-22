@@ -7,7 +7,7 @@ namespace Collection;
 * insecure way(instead of wrappers calling).
 * Environment, - for script, - it`s interface to all readable
 * inputs on runtime, exclude IOStream treatments in future.
-* Work across driver.
+* Work across driver. Intrptr env is singleton, but env is reusable.
 **/
 class Environment{
     private static $drivers = [ PHPXENV ]; //registry
