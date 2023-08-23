@@ -17,3 +17,7 @@ IOStream reading outside from current context. Env contains Arguments with logic
 
 The fields host and executor is required even if the executor is human.
 The R. host can connected without protocols. Inclusive - script server.
+For code, - for logic source, execution controller is interpreter called by 
+host by action.
+
+
