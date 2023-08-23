@@ -20,4 +20,8 @@ The R. host can connected without protocols. Inclusive - script server.
 For code, - for logic source, execution controller is interpreter called by 
 host by action.
 
+For script the caller accesible only as interpreter env, but
+for application or program the executor is host or API &
+can be aliased as executor.
 
+single argument __FILE__ is equal of empty. 
