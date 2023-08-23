@@ -9,12 +9,12 @@ include_once _CD.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'defines.php';
 
 $router = Collection\Patterns\Router::getInstance();
 $router::assign( new Route([], function(){ return 0; }) );
-$router::assign( new Route(
-  include 'config/default-get.nril.php', 
-  function(){ return 'responce text';  }
-));
+$router::assign( 
+  include 'config/default-http-s-visit.rb.php', 
+  function( $args ){ return 'responce: request('.print_r( $args, true ).")";  }
+);
 
 $responce = $router::dispatch( RequestReaderInterfaceIterable );
 
-echo $responce;
+echo $responce->toStr().PHP_EOL;
 
