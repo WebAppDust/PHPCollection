@@ -14,5 +14,13 @@ class SingletonException extends ConventionException{
 
     function _construct( $cls, $note=SingletonException::RFC000, $code=null, $previous=null )
     {
-        $this
+        $this->note = $note;
+        $this->cat = "Singleton Convention";
+        $this->entity = get_class/*name*/( $cls ); //Singleton::isSingleton
     }
+
+
+    function getMessage(){
+        return get_class($this) . ": " . $this->note . ', ' . $this->cat . ' {key}';
+    }
+}
