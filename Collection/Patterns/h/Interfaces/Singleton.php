@@ -8,9 +8,9 @@ namespace Collection\Patterns\h\Interfaces;
 /* public */interface Singleton /*, oBehaviour*/{
     //private static $__instance;
     
-    function _construct();
-    function Instance();
-    function getInstance();
-    function hasInstance();
+    /* protected *///function _construct();
+    static function Instance();
+    static function getInstance();
+    static function hasInstance();
 }
 
