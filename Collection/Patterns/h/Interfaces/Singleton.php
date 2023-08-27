@@ -5,16 +5,13 @@
 namespace Collection\Patterns\h\Interfaces;
 
 
-/*public */interface Singleton{
-
+/*public */interface Singleton /*, oBehaviour*/{
+    //private static $__instance;
     
-    function _construct(){
-        
-    }
-
-    
-    function getSingleton(){
-        
-    }
+    function _construct();
+    function Instance();
+    function getInstance();
+    function getSingleton();
+    function hasInstance();
 }
 
