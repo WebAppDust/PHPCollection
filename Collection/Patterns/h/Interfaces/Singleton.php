@@ -11,7 +11,6 @@ namespace Collection\Patterns\h\Interfaces;
     function _construct();
     function Instance();
     function getInstance();
-    function getSingleton();
     function hasInstance();
 }
 
