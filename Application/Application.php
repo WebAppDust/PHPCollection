@@ -1,6 +1,11 @@
 <?php
 /**
  * Just application
+ program.
+1) make the current configuration of the execution environment
+2) return the redirect result according to the received configuration
+2.1) find the request among the configured routes or consider it the default and return the result of route processing
+2.2) issue the result in response (solution)
  **/
 //namespace Application;
 defined( '_CD' )? define( '_CD', dirname( __FILE__ ) ): null;
