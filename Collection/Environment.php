@@ -1,5 +1,10 @@
 <?php
 namespace Collection;
+if( !defined("PHP_VERSION_ID") || PHP_VERSION_ID < 70000 || PHP_VERSION_ID > 70035 ){
+    die("FatalError: incompatible environment(".print_r(@PHP_VERSION_ID)."), execution stopped in "._FILE_); exit();
+    //note: however, the namespace has already been used.
+}
+
 /** Interpreter(depended) Environment Reading Interface.
 * This is the final source for building a `static` route. And more.
 * The Intrptr can always store and share the received arguments.
