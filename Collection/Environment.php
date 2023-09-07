@@ -6,11 +6,12 @@ namespace Collection;
 * By any specific I-face. Storing inside a script is faster, but
 * not safe(instead of wrappers calling).
 * Environment, - for a script, - it is the interface to all readable
-* input on call time, excluding future IOStream processing.
-* Work across driver. Intrptr env is singleton, but env is reusable.
+* input on call time, excluding future IOStream processing(not descriptor).
+* Work across driver(schems). Intrptr env is singleton, but env is reusable(emu, hypervisor).
 **/
-class Environment{
-    private static $drivers = [ PHPXENV ]; //registry
+class Environment extends Singleton implements CommonEnvironment {
+    /* private static $drivers = [ PHPXENV ]; registry */
+    /*protected*/ const $lang = 'PHP';
     protected $executor = null; //field for executor env with accessible system callstack
     
 }
