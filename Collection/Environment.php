@@ -1,6 +1,6 @@
 <?php
 namespace Collection;
-if( !defined("PHP_VERSION_ID") || PHP_VERSION_ID < 70000 || PHP_VERSION_ID > 70035 ){
+if( defined("PHP_VERSION_ID") == null || PHP_VERSION_ID < 70000 || PHP_VERSION_ID > 70035 ){
     die("FatalError: incompatible environment(".print_r(@PHP_VERSION_ID)."), execution stopped in "._FILE_); exit();
     //note: however, the namespace has already been used.
 }
