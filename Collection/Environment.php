@@ -16,9 +16,16 @@ if( defined("PHP_VERSION_ID") == null || PHP_VERSION_ID < 70000 || PHP_VERSION_I
 **/
 class Environment extends Singleton implements CommonEnvironment {
     /* private static $drivers = [ PHPXENV ]; registry */
-    /*protected*/ const $lang = 'PHP';
+    /*protected*/ const $lang = 'PHP-*'; // writed for *lang
     protected $executor = null; //field for executor env with accessible system callstack
+
     
+    function __construct(){
+        $this->executor = [
+            "name": ,
+            "language": [ /* [...  */ self::$lang ],
+        ];
+    }
 }
 
 
