@@ -13,6 +13,9 @@ if( defined("PHP_VERSION_ID") == null || PHP_VERSION_ID < 70000 || PHP_VERSION_I
 * Environment, - for a script, - it is the interface to all readable
 * input on call time, excluding future IOStream processing(not descriptor).
 * Work across driver(schems). Intrptr env is singleton, but env is reusable(emu, hypervisor).
+* This is not a wrapper for the entire api! 
+* However, values ​​that can be taken as arguments, 
+* including compatibility checks, will be included.
 **/
 class Environment extends Singleton implements CommonEnvironment {
     /*protected*/ const $lang = 'PHP'; // writed for *lang
