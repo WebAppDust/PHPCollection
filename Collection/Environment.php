@@ -21,6 +21,7 @@ class Environment extends Singleton implements CommonEnvironment {
     /*protected*/ const $lang = 'PHP'; // writed for *lang
     protected $executor = null; //field for storing executor info
     protected $stack    = null; //accessible system execution callstack
+    protected $id    =  [null]; //common enveronment id : auto, uniq,
 
   
     function __construct(){
