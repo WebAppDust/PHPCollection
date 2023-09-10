@@ -31,24 +31,10 @@ class Environment extends Singleton implements CommonEnvironment {
 
 
     function getIntroduction(){
-        $this->executor = [
-            "name": "phpstream",
-            "type"=>"stream",
-            "scheme"=>'Collection/schm/PHP/spec_'.PHP_VERSION_ID.'.php'
-        ];
-        
-        $this->stack = [
-            "type"=>"interpreter",
-            "name"=>basename(PHP_BINARY),
-            "location"=>dirname(PHP_BINARY),
-            "scheme"=>'path/to/schm/PHP/'.basename(PHP_BINARY).DIRECTORY_SEPARATOR.PHP_VERSION_ID.'.php'
-            "executor"=>&$this->executor
-        ];
-
-        include 'Collection/drv/PHP/enveronment_'.PHP_VERSION_ID.'.php';
-        $this->driver = environment_.PHP_VERSION_ID;
+        include "drv/PHP/environment_".PHP_VERSION_ID.".php";
+        $this->driver = Collection\drv\PHP\environment_.PHP_VERSION_ID;
         $this->executor = $this->driver::getExecutor();
-        $this->stack = $this->driver::getExecutorStack();
+        $this->stack = $this->driver::getExecutionStack();
     }
 }
 
