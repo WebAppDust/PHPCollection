@@ -3,8 +3,8 @@ Expanded chain:(roadmap)
 The calling stack of Client-server route components.
 host --- backported from executor, always route behaviour.
     ->executor                         - script is live
-      -> stream                        - the currently running thread.
         ->arguments                    - empty or not empty, everywhere. Next - Just Environment.
+          -> stream                    - the currently running thread.
             ->remote                   - process touched from outside
                 ->connection           - connection established, sides ready
                     ->protocol         - selected schema of data transfer
