@@ -34,6 +34,14 @@ class Environment extends Singleton implements CommonEnvironment {
             "type"=>"stream",
             "scheme"=>'path/to/schm/PHP/'.PHP_VERSION_ID.'.php'
         ];
+
+        $this->stack = [
+            "type"=>"interpreter",
+            "name"=>basename(PHP_BINARY),
+            "location"=>dirname(PHP_BINARY),
+            "scheme"=>'path/to/schm/PHP/'.basename(PHP_BINARY).DIRECTORY_SEPARATOR.PHP_VERSION_ID.'.php'
+            "executor"=>&$this->executor
+        ];
     }
 }
 
