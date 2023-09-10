@@ -19,7 +19,8 @@ if( defined("PHP_VERSION_ID") == null || PHP_VERSION_ID < 70000 || PHP_VERSION_I
 **/
 class Environment extends Singleton implements CommonEnvironment {
     /*protected*/ const $lang = 'PHP'; // writed for *lang
-    protected $executor = null; //field for executor env with accessible system callstack
+    protected $executor = null; //field for storing executor info
+    protected $stack    = null; //accessible system execution callstack
 
   
     function __construct(){
