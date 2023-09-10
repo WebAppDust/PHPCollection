@@ -15,10 +15,10 @@ if( defined("PHP_VERSION_ID") == null || PHP_VERSION_ID < 70000 || PHP_VERSION_I
 * Work across driver(schems). Intrptr env is singleton, but env is reusable(emu, hypervisor).
 **/
 class Environment extends Singleton implements CommonEnvironment {
-    /*protected*/ const $lang = 'PHP-*'; // writed for *lang
+    /*protected*/ const $lang = 'PHP'; // writed for *lang
     protected $executor = null; //field for executor env with accessible system callstack
 
-    
+  
     function __construct(){
         
     }
@@ -27,7 +27,8 @@ class Environment extends Singleton implements CommonEnvironment {
     function getIntroduction(){
         $this->executor = [
             "name": "phpstream",
-            "language": [ /* [...  */ self::$lang ],
+            "type"=>"stream",
+            "scheme"=>'path/to/schm/PHP/'.PHP_VERSION_ID.'.php'
         ];
     }
 }
