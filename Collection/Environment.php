@@ -22,6 +22,7 @@ class Environment extends Singleton implements CommonEnvironment {
     protected $executor = null; //field for storing executor info
     protected $stack    = null; //accessible system execution callstack
     protected $id    =  [null]; //common enveronment id : auto, uniq,
+    protected $driver   = null;
 
   
     function __construct(){
@@ -33,9 +34,9 @@ class Environment extends Singleton implements CommonEnvironment {
         $this->executor = [
             "name": "phpstream",
             "type"=>"stream",
-            "scheme"=>'path/to/schm/PHP/'.PHP_VERSION_ID.'.php'
+            "scheme"=>'Collection/schm/PHP/spec_'.PHP_VERSION_ID.'.php'
         ];
-
+        
         $this->stack = [
             "type"=>"interpreter",
             "name"=>basename(PHP_BINARY),
@@ -43,6 +44,11 @@ class Environment extends Singleton implements CommonEnvironment {
             "scheme"=>'path/to/schm/PHP/'.basename(PHP_BINARY).DIRECTORY_SEPARATOR.PHP_VERSION_ID.'.php'
             "executor"=>&$this->executor
         ];
+
+        include 'Collection/drv/PHP/enveronment_'.PHP_VERSION_ID.'.php';
+        $this->driver = environment_.PHP_VERSION_ID;
+        $this->executor = $this->driver::getExecutor();
+        $this->stack = $this->driver::getExecutorStack();
     }
 }
 
