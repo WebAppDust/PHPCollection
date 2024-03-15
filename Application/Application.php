@@ -12,8 +12,8 @@
  * 5) formalize the result(of 4) in a response solution.
  **/
 //namespace Application;
-defined( '_CD' )? define( '_CD', dirname( __FILE__ ) ): null;
-defined( '_CF' )? define( '_CF', basename( __FILE__ ) ): null;
+!defined( '_CD' )? define( '_CD', dirname( __FILE__ ) ): null;
+!defined( '_CF' )? define( '_CF', basename( __FILE__ ) ): null;
 include_once _CD.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'defines.php';
 
 $router = Collection\Patterns\Router::getInstance();
